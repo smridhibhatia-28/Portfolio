@@ -20,7 +20,6 @@
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--text); font-family: var(--sans); overflow-x: hidden; }
 
-/* DOT GRID BG */
 body::before {
   content: ''; position: fixed; inset: 0;
   background-image: radial-gradient(circle, rgba(124,92,191,0.15) 1px, transparent 1px);
@@ -40,7 +39,7 @@ body::before {
 .hero-name-italic { font-style: italic; background: linear-gradient(135deg, var(--violet2), var(--violet3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .hero-tagline.centered-text { font-size: 1.25rem; color: var(--muted); max-width: 700px; line-height: 1.7; }
 
-/* HIGHLIGHT BADGES (Dean's List / Bootcamp) */
+/* HIGHLIGHT BADGES */
 .highlight-badge {
     background: var(--accent-soft);
     color: var(--accent);
@@ -86,7 +85,7 @@ body::before {
 .skill-card { transition: 0.4s ease; }
 .skill-card:hover { transform: scale(1.05); border-color: var(--violet2); }
 
-/* EXISTING STYLES PRESERVED */
+/* CORE STYLES */
 .topnav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; background: rgba(15,15,19,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
 .nav-brand { font-family: var(--mono); font-size: 0.8rem; color: var(--violet2); letter-spacing: 0.1em; }
 .nav-links a { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); text-decoration: none; margin-left: 1.5rem; transition: 0.3s; text-transform: uppercase; }
