@@ -59,15 +59,14 @@ body::before {
 /* ── SIDEBAR NAV ── */
 .sidebar {
   position: fixed;
-  left: 0; top: 0; bottom: 0;
-  width: 64px;
+  top: 0; left: 0; right: 0;
+  height: 64px;
   z-index: 200;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
-  border-right: 1px solid var(--border);
+  gap: 3rem;
+  border-bottom: 1px solid var(--border);
   background: rgba(7,26,23,0.85);
   backdrop-filter: blur(16px);
 }
@@ -95,14 +94,13 @@ body::before {
 
 .sidebar a {
   font-family: var(--mono);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   color: var(--muted);
   text-decoration: none;
-  writing-mode: vertical-rl;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: color 0.2s;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
 }
 .sidebar a:hover, .sidebar a.active { color: var(--teal3); }
 
@@ -116,7 +114,6 @@ body::before {
 
 /* ── MAIN CONTENT (offset for sidebar) ── */
 .main {
-  margin-left: 64px;
   position: relative;
   z-index: 1;
 }
@@ -124,8 +121,9 @@ body::before {
 /* ── HERO ── */
 .hero {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
   overflow: hidden;
 }
@@ -166,12 +164,13 @@ body::before {
 }
 
 .hero-left {
-  padding: 5rem 3.5rem 4rem 4rem;
+  padding: 5rem 8rem 2rem 8rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .hero-badge {
@@ -228,10 +227,10 @@ body::before {
   font-size: 0.95rem;
   color: var(--muted);
   line-height: 1.85;
-  max-width: 420px;
   margin-bottom: 2.5rem;
   opacity: 0;
   animation: fadeUp 0.6s 0.55s forwards;
+  text-align: center;
 }
 
 .hero-ctas {
@@ -275,14 +274,12 @@ body::before {
 
 /* hero right — bento */
 .hero-right {
-  padding: 5rem 4rem 4rem 3rem;
+  padding: 2rem 4rem 4rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.9rem;
   position: relative;
   z-index: 1;
-  border-left: 1px solid var(--border);
 }
 
 .bento-row { display: flex; gap: 0.9rem; }
@@ -362,7 +359,7 @@ body::before {
 
 /* ── HORIZONTAL SCROLL WRAPPER ── */
 .hscroll-section {
-  padding: 4rem 0 4rem 4rem;
+  padding: 4rem 0;
   border-top: 1px solid var(--border);
   position: relative;
 }
@@ -376,7 +373,6 @@ body::before {
   align-items: baseline;
   gap: 1rem;
   margin-bottom: 2rem;
-  padding-right: 4rem;
 }
 .section-eyebrow {
   font-family: var(--mono);
@@ -406,7 +402,6 @@ body::before {
   gap: 1rem;
   overflow-x: auto;
   padding-bottom: 1.2rem;
-  padding-right: 4rem;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   cursor: grab;
@@ -420,7 +415,7 @@ body::before {
 #projects .hscroll-track {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 0;
   overflow-x: visible;
   padding-right: 0;
   scroll-snap-type: none;
@@ -479,8 +474,8 @@ body::before {
 .about-card-main {
   background: rgba(13,148,136,0.10);
   border-color: rgba(20,184,166,0.25);
-  min-width: 440px;
-  max-width: 460px;
+  min-width: 100%;
+  max-width: 100%;
 }
 .about-card-main::before {
   background: radial-gradient(ellipse at top left, rgba(13,148,136,0.15), transparent 60%);
@@ -551,8 +546,9 @@ body::before {
 
 /* ── PROJECT CARDS (horizontal) ── */
 .proj-card {
-  min-width: 320px;
-  max-width: 340px;
+  min-width: unset;
+  width: 100%;
+  max-width: 100%;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -615,6 +611,7 @@ body::before {
   letter-spacing: -0.02em;
   color: var(--white);
   margin-bottom: 0.9rem;
+  text-align: center;
 }
 .proj-bullets {
   list-style: none;
@@ -629,6 +626,8 @@ body::before {
   line-height: 1.6;
   display: flex;
   gap: 0.5rem;
+  text-align: center;
+  justify-content: center;
 }
 .proj-bullets li::before {
   content: '▸';
@@ -968,10 +967,10 @@ body::before {
 @media (max-width: 900px) {
   .sidebar { display: none; }
   .main { margin-left: 0; }
-  .hero { grid-template-columns: 1fr; }
-  .hero-right { border-left: none; border-top: 1px solid var(--border); padding: 2rem 2rem 3rem; }
+  .hero { /* removed grid-template-columns */ }
+  .hero-right { /* removed border-left and padding adjustments */ padding: 2rem 2rem 3rem; }
   .hero-left { padding: 4rem 2rem 2rem; }
-  .hscroll-section { padding: 3rem 0 3rem 1.5rem; }
+  .hscroll-section { padding: 3rem 0; }
   .contact-wrap { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
   .footer { padding: 1.2rem 1.5rem; }
 }
@@ -1013,9 +1012,16 @@ body::before {
         <a href="mailto:smridhi2bhatia@gmail.com" class="btn btn-ghost">✉ Email</a>
       </div>
     </div>
+  </div>
 
-    <div class="hero-right">
-      <div class="about-card about-card-main reveal" style="min-width: 100%; max-width: 100%; padding: 2.2rem;">
+  <!-- ABOUT -->
+  <div class="hscroll-section" id="about">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">about me</span>
+      <span class="section-title">Who I Am</span>
+    </div>
+    <div class="hscroll-track">
+      <div class="about-card about-card-main reveal">
         <div class="about-card-tag">about me</div>
         <div class="about-card-title">Academic and Technical Focus</div>
         <div class="about-card-body">
