@@ -415,9 +415,9 @@ body::before {
 #projects .hscroll-track {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0;
+  gap: 1.2rem;
   overflow-x: visible;
-  padding-right: 0;
+  padding: 0 1.25rem;
   scroll-snap-type: none;
 }
 
@@ -653,8 +653,9 @@ body::before {
 
 /* ── SKILL CARDS (horizontal) ── */
 .skill-card {
-  flex: 1; /* This makes them grow to fill the row */
-  min-width: 300px; /* Increased base size */
+  flex: 0 0 380px; /* fixed wider widths to trigger more horizontal scroll */
+  min-width: 360px; /* increased base size */
+  max-width: 420px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -1146,18 +1147,7 @@ body::before {
         </div>
       </div>
 
-      <!-- <div class="skill-card reveal">
-        <div class="skill-card-head">
-          <div class="skill-icon">🔧</div>
-          <div class="skill-card-title">Currently Learning</div>
-        </div>
-        <div class="chip-wrap">
-          <span class="chip">Deep Learning</span>
-          <span class="chip">Neural Networks</span>
-          <span class="chip">NLP</span>
-          <span class="chip">Computer Vision</span>
-        </div>
-      </div> -->
+    
 
     </div>
   </div>
