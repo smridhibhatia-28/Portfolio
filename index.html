@@ -653,7 +653,8 @@ body::before {
 
 /* ── SKILL CARDS (horizontal) ── */
 .skill-card {
-  min-width: 260px;
+  flex: 1; /* This makes them grow to fill the row */
+  min-width: 300px; /* Increased base size */
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -1145,7 +1146,7 @@ body::before {
         </div>
       </div>
 
-      <div class="skill-card reveal">
+      <!-- <div class="skill-card reveal">
         <div class="skill-card-head">
           <div class="skill-icon">🔧</div>
           <div class="skill-card-title">Currently Learning</div>
@@ -1156,7 +1157,7 @@ body::before {
           <span class="chip">NLP</span>
           <span class="chip">Computer Vision</span>
         </div>
-      </div>
+      </div> -->
 
     </div>
   </div>
